@@ -1,4 +1,4 @@
-<h2><?php echo $title; ?></h2>
+<h1><?php echo $title; ?></h1>
 
 <?php foreach ($news as $news_item): ?>
 
