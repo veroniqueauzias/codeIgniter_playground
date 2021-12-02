@@ -1,4 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Oswald&family=Roboto&display=swap');
+
+html {
+    position: relative;
+    min-height: 100%;
+    --title-police:  'Lobster', cursive;
+    --subtitle-police: 'Oswald', sans-serif;
+    --text-police: 'Roboto', sans-serif;
+    --background-color : #F7F7F7;
+    --title-color: #613C63;
+    --subtitle-color: #bd1fc5;
+    --nav-color: #d4cdd4;
+}
+
+body {
+    background-color:var(--background-color);
+    font-family: var(--text-police);
+}
+
+main {
+    margin-bottom: 160px;  
+}
+
+.flex {
+    display: flex;
+}
 
 h1 {
-    color: rgb(92, 60, 99);
+    color:var(--title-color);
+    font-family: var(--title-police);
+}
+
+h2 {
+    color:var(--subtitle-color);
+    font-family: var(--subtitle-police);
+}
+
+
+
+.navbar {
+    background-color: var(--nav-color)!important;
+}
+
+.navbar-light .navbar-nav .nav-link, .navbar-light .navbar-brand {
+    color: var(--title-color);
+    font-family: var(--subtitle-police);
+}
+
+.btn-primary {
+    background-color: var(--title-color);
+    border-color: var(--title-color);
+}
+
+.btn-primary:hover{
+    background-color: var(--nav-color);
+    border-color: var(--nav-color);
+}
+
+.customLink a {
+    color: var(--title-color)!important;
+    text-decoration: none;
+}
+
+footer {
+    background-color:lightgray;
+    height:2rem;
+    position:absolute;
+    width: 100%;
+    bottom:0;
 }

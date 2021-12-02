@@ -1,6 +1,7 @@
-<br />
-<br />
-<em>&copy; 2015</em>
+<footer class="flex justify-content-center align-items-center">
+<em>&copy; 2021</em>
+</footer>
+
 
 <!-- implement boostrap js-->
 
