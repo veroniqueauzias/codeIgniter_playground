@@ -16,6 +16,7 @@ class Pages extends CI_Controller {
                     // Whoops, we don't have a page for that!
                     show_404();
             }
+            $this->load->helper('url');
     
             $data['title'] = ucfirst($page); // Capitalize the first letter
 
