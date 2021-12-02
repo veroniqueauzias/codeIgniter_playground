@@ -1,5 +1,6 @@
 <main class="container mt-5">
     <h1 class="mb-5">Nouvel article</h1>
+    <?= isset($echec)? $echec : "";?>
 <?php echo validation_errors(); ?>
 
 <?php echo form_open('news/create'); ?>

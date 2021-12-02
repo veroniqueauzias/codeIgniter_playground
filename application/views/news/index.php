@@ -1,4 +1,5 @@
 <main class="container mt-5">
+        <?= isset($success)? $success : "";?>
 
 <h1><?php echo $title; ?></h1>
 
