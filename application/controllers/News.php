@@ -57,6 +57,8 @@ class News extends CI_Controller {
         }
         }
 
+        /*
+
         public function set_news()
         {
         $this->load->helper('url');
@@ -71,4 +73,5 @@ class News extends CI_Controller {
 
         return $this->db->insert('news', $data);
         }
+        */
 }

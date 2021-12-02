@@ -1,3 +1,3 @@
-<main class="container"
+<main class="container">
 Bravo!!
 </main>
