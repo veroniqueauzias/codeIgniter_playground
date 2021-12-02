@@ -11,7 +11,7 @@ class News extends CI_Controller {
         public function index()
         {
             $data['news'] = $this->news_model->get_news();
-            $data['title'] = 'News archive';
+            $data['title'] = 'Articles';
 
             $this->load->view('templates/header', $data);
             $this->load->view('news/index', $data);
@@ -48,14 +48,21 @@ class News extends CI_Controller {
                 $this->load->view('templates/header', $data);
                 $this->load->view('news/create');
                 $this->load->view('templates/footer');
+                $data['echec'] = "un problème est survenu";
 
         }
         else
         {
+                
                 $this->news_model->set_news();
+                $this->load->view('templates/header', $data);
                 $this->load->view('news/success');
+                $this->load->view('templates/footer');
+                $data['success'] = "L'article a bien été ajouté";
         }
         }
+
+        /*
 
         public function set_news()
         {
@@ -71,4 +78,5 @@ class News extends CI_Controller {
 
         return $this->db->insert('news', $data);
         }
+        */
 }

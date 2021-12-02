@@ -500,7 +500,7 @@ if ( ! function_exists('url_title'))
 
 		$str = strip_tags($str);
 		//me: remove accents
-		$str = str_replace(['é','è','ê','à'], ['e','e','e','a'], $str);
+		$str = str_replace(['é','è','ê','ê','ë','à', 'ç'], ['e','e','e','e','e','a', 'c'], $str);
 
 		foreach ($trans as $key => $val)
 		{
