@@ -55,28 +55,9 @@ class News extends CI_Controller {
         {
                 
                 $this->news_model->set_news();
-                $this->load->view('templates/header', $data);
-                $this->load->view('news/success');
-                $this->load->view('templates/footer');
                 $data['success'] = "L'article a bien été ajouté";
+                redirect('/news/', 'refresh');
         }
         }
 
-        /*
-
-        public function set_news()
-        {
-        $this->load->helper('url');
-
-        $slug = url_title($this->input->post('title'), 'dash', TRUE);
-
-        $data = array(
-                'title' => $this->input->post('title'),
-                'slug' => $slug,
-                'text' => $this->input->post('text')
-        );
-
-        return $this->db->insert('news', $data);
-        }
-        */
 }
