@@ -6,6 +6,7 @@ class News extends CI_Controller {
             parent::__construct();
             $this->load->model('news_model');
             $this->load->helper('url_helper');
+            $this->load->library('session');
         }
 
         public function index()
@@ -53,9 +54,8 @@ class News extends CI_Controller {
         }
         else
         {
-                
                 $this->news_model->set_news();
-                $data['success'] = "L'article a bien été ajouté";
+                $this->session->set_flashdata('success', 'l\'article a été ajouté');
                 redirect('/news/', 'refresh');
         }
         }
