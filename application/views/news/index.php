@@ -1,5 +1,11 @@
 <main class="container mt-5">
-        <?= isset($success)? $success : "";?>
+        <!-- display sesssion flashdata: success -->
+  <?php if($this->session->flashdata('success')):?>
+        <div class="alert alert-success" role="alert">
+                <?=$this->session->flashdata('success');
+                endif ?>
+        </div>
+
 
 <h1><?php echo $title; ?></h1>
 

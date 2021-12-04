@@ -6,6 +6,7 @@ class News extends CI_Controller {
             parent::__construct();
             $this->load->model('news_model');
             $this->load->helper('url_helper');
+            $this->load->library('session');
         }
 
         public function index()
@@ -53,30 +54,10 @@ class News extends CI_Controller {
         }
         else
         {
-                
                 $this->news_model->set_news();
-                $this->load->view('templates/header', $data);
-                $this->load->view('news/success');
-                $this->load->view('templates/footer');
-                $data['success'] = "L'article a bien été ajouté";
+                $this->session->set_flashdata('success', 'l\'article a été ajouté');
+                redirect('/news/', 'refresh');
         }
         }
 
-        /*
-
-        public function set_news()
-        {
-        $this->load->helper('url');
-
-        $slug = url_title($this->input->post('title'), 'dash', TRUE);
-
-        $data = array(
-                'title' => $this->input->post('title'),
-                'slug' => $slug,
-                'text' => $this->input->post('text')
-        );
-
-        return $this->db->insert('news', $data);
-        }
-        */
 }
