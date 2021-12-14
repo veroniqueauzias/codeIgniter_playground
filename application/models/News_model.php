@@ -23,9 +23,7 @@ class News_model extends CI_Model {
         $this->load->helper('url');
 
         $slug = url_title($this->input->post('title'), 'dash', TRUE);
-        //remove accent in slug
-        //$slug = str_replace(['é','è','ê','à'], ['e','e','e','a'], $slug);
-
+      
         $data = array(
                 'title' => $this->input->post('title'),
                 'slug' => $slug,
@@ -35,5 +33,29 @@ class News_model extends CI_Model {
         return $this->db->insert('news', $data);
         }
 
-}
+
+        public function update_news($slug)
+        {
+                // get new data
+                $this->load->helper('url');
+
+                $newslug = url_title($this->input->post('title'), 'dash', TRUE);
+              
+                $data = array(
+                        'title' => $this->input->post('title'),
+                        'slug' => $newslug,
+                        'text' => $this->input->post('text')
+                );
+        
+                //update db
+                $this->db->where('slug',$slug); // where slug is old slug given in parameter
+                return $this->db->update('news', $data);
+
+        }
+
+        public function delete_news($slug) {
+                $this->db->where('slug',$slug); 
+                return $this->db->delete('news');
+                }
+        }
 
