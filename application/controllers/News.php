@@ -81,6 +81,18 @@ class News extends CI_Controller
                         $this->session->set_flashdata('success', 'l\'article a été modifié');
                         redirect('/news/', 'refresh');
                      
+                }
         }
-}
+
+        public function delete($slug) {
+             
+                if($this->news_model->delete_news($slug)) {
+                        $this->session->set_flashdata('success', 'l\'article a été supprimé');
+                        redirect('/news/', 'refresh');
+                } else {
+                        $this->session->set_flashdata('error', 'un problème est survenu');
+                        redirect('/news/view/', 'refresh');
+                }
+        }
+
 }
